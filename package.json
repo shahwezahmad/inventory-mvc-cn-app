@@ -1,0 +1,34 @@
+{
+  "name": "inventory-app",
+  "version": "1.0.0",
+  "description": "A web application for track the record of inventory",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahwezahmad/inventory-mvc-cn-app.git"
+  },
+  "keywords": [
+    "Inventory",
+    "App",
+    "Backend",
+    "MVC"
+  ],
+  "author": "shahwez ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahwezahmad/inventory-mvc-cn-app/issues"
+  },
+  "homepage": "https://github.com/shahwezahmad/inventory-mvc-cn-app#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
