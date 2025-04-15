@@ -8,8 +8,10 @@ import ProductModel from '../models/product.model.js'
 
 export default class GetProducts {
     static getProducts(req, res)  {
-    console.log(ProductModel.get())
-        res.sendFile(path.join(path.resolve(), "src","views","products.html"))
+    const products = (ProductModel.get())
+        // res.sendFile(path.join(path.resolve(), "src","views","products.ejs"))
+        res.render("products", {products})
     }
 }
+
 
