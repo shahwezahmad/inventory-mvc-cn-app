@@ -1,11 +1,17 @@
 import  express from 'express'
 import dotenv from 'dotenv'
-dotenv.config()
 const app = express()
-const port =  process.env.PORT ?? 4000
+import GetProducts from './src/controllers/products.controller.js'
 
-app.get('/', (req, res) => {
-    res.send('welcome to inventory app')
-})
+dotenv.config()
+const port =  process.env.PORT ?? 3100
+
+
+// express.static()
+
+
+
+
+app.get('/', GetProducts.getProducts)
 
 app.listen(4000, () => console.log(`projec is running on PORT ${port}`))
