@@ -25,13 +25,14 @@ export default class ProductModel {
     );
   }
 
-  static update(product) {
-    const updatedProduct = new ProductModel( Number(product.id),
-      product.productName,
-      product.productDesc,
-      product.productPrice,
-      product.imgUrl)
-     products = products.map((item) => item.id == (product.id) ? updatedProduct : item)
+  static update({id, productName, productDesc, productPrice, imgUrl }) {
+    const updatedProduct = new ProductModel( Number(id),
+      productName,
+      productDesc,
+      productPrice,
+      imgUrl
+    )
+     products = products.map((item) => item.id == (id) ? updatedProduct : item)
     
   }
 

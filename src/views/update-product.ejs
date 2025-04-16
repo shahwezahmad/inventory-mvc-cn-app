@@ -6,7 +6,7 @@
     </div>
 <% } %>
 
-<form action="/updateProduct" method="post">
+<form action="/updateProduct" method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <!-- <label for="exampleInputEmail1" class="form-label">Product Id</label> -->
       <input type="hidden" class="form-control"  value="<%=  product.id %>" name="id" id="productId"  aria-describedby="emailHelp">
@@ -29,8 +29,9 @@
       <input type="text" class="form-control" name="procductPrice" id="exampleInputPassword1"  value="<%=  product.price %>" >
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Image Url</label>  
-      <input type="text" class="form-control" id="exampleInputPassword1" name="imgUrl"  value="<%=  product.imgUrl %>" >
+      <label for="exampleInputPassword1" class="form-label">Upload file</label>  
+      <!-- <input type="text" class="form-control" id="exampleInputPassword1" name="imgUrl"  value="<%=  product.imgUrl %>" > -->
+      <input type="file" class="form-control" id="exampleInputPassword1" name="imgUrl"  >
     </div>
     
     <button type="submit" class="btn btn-primary">Update</button>

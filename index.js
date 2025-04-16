@@ -24,7 +24,7 @@ app.get('/', Products.getProducts)
 app.get('/getAddProduct', Products.getddProduct )
 app.get('/updateProduct/:id', Products.updateProduct)
 app.post('/', upload.single('imgUrl') , productMiddleware, Products.addNewProduct )
-app.post('/updateProduct',  Products.postUpdateProduct)
+app.post('/updateProduct', upload.single('imgUrl'),  Products.postUpdateProduct)
 app.post('/deleteProduct/:id', Products.deleteProduct)
 
 app.listen(port, () => console.log(`project is running on PORT ${port}`))

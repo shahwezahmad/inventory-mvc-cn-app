@@ -18,7 +18,7 @@ export default class Products {
 
   static addNewProduct(req, res) {
     let { productName, productDesc, productPrice,  } = req.body;
-    
+
     const imgUrl = 'images/' + req.file?.filename;
     ProductModel.add({ productName, productDesc, productPrice, imgUrl });
     const products = ProductModel.get();
@@ -26,8 +26,7 @@ export default class Products {
   }
 
   static updateProduct(req, res) {
-    // check product
-    // const {id ? id : 2} = req.body
+ 
 
     let product = ProductModel.checkProduct(Number(req.params.id));
     if (product) {
@@ -38,7 +37,10 @@ export default class Products {
   }
 
   static postUpdateProduct(req, res) {
-    ProductModel.update(req.body);
+    let {id,productName, productDesc, productPrice,} = req.body
+    const imgUrl =  'images/' + req.file?.filename;
+    console.log(imgUrl)
+    ProductModel.update({id, productName, productDesc, productPrice, imgUrl });
     let products = ProductModel.get();
     res.render("products", { products });
   }
