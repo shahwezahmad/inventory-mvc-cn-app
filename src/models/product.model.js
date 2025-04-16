@@ -19,7 +19,7 @@ export default class ProductModel {
         products.length + 1,
         product.productName,
         product.productDesc,
-        product.procductPrice,
+        product.productPrice,
         product.imgUrl
       )
     );

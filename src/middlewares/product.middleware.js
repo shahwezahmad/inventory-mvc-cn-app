@@ -22,7 +22,11 @@ export const productMiddleware = async (req, res, next) => {
             body('productName').notEmpty().withMessage('Enter product name'),
             body('productDesc').notEmpty().withMessage('Enter product description'),
             // body('productPrice').isFloat({gt:0}).withMessage('Enter correct price'),
-            body('imgUrl').isURL().withMessage('Enter valid URL')
+            // body('imgUrl').isURL().withMessage('Enter valid URL')
+                // body('imgUrl').custom((value, (req) => {
+                //     if(!req.file) throw new Error('Upload Product Image')
+                //     return true
+                // }) )
 
         ]
 

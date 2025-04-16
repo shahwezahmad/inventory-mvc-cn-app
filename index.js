@@ -4,6 +4,7 @@ import expressLayouts from 'express-ejs-layouts'
 import path from 'path'
 import Products from './src/controllers/products.controller.js'
 import {productMiddleware} from './src/middlewares/product.middleware.js'
+import { upload } from './src/middlewares/file-upload.middleware.js'
 const app = express()
 
 
@@ -22,8 +23,8 @@ app.use(express.static('public'))
 app.get('/', Products.getProducts)
 app.get('/getAddProduct', Products.getddProduct )
 app.get('/updateProduct/:id', Products.updateProduct)
-app.post('/', productMiddleware, Products.addNewProduct )
-app.post('/updateProduct', Products.postUpdateProduct)
+app.post('/', upload.single('imgUrl') , productMiddleware, Products.addNewProduct )
+app.post('/updateProduct',  Products.postUpdateProduct)
 app.post('/deleteProduct/:id', Products.deleteProduct)
 
 app.listen(port, () => console.log(`project is running on PORT ${port}`))
