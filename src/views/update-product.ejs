@@ -1,0 +1,37 @@
+<h1 class="mb-5 mt-4">Update     product</h1>
+
+ <% if(errorMessage) { %>
+    <div class="alert alert-danger" role="alert">
+      <%= errorMessage %>
+    </div>
+<% } %>
+
+<form action="/updateProduct" method="post">
+    <div class="mb-3">
+      <!-- <label for="exampleInputEmail1" class="form-label">Product Id</label> -->
+      <input type="hidden" class="form-control"  value="<%=  product.id %>" name="id" id="productId"  aria-describedby="emailHelp">
+      <!-- <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+      <input type="text" class="form-control" name="productName" id="exampleInputEmail1"  value="<%=  product.product_name %>"  aria-describedby="emailHelp">
+      <!-- <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Product Description</label>
+      <textarea class="form-control" placeholder="Leave a comment here"   id="floatingTextarea" name="productDesc">
+      <%=  product.desc %>" 
+      </textarea>
+      <!-- <div id="emailHelp"  class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="text" class="form-control" name="procductPrice" id="exampleInputPassword1"  value="<%=  product.price %>" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Image Url</label>  
+      <input type="text" class="form-control" id="exampleInputPassword1" name="imgUrl"  value="<%=  product.imgUrl %>" >
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
