@@ -35,6 +35,11 @@
         </div>
     </nav>
     <div class="container"> -->
+        <% if(locals.lastVisit) { %>
+            <div class="alert alert-danger">
+               last visit at:  <%= locals.lastVisit %>
+            </div>
+       <% }  %>
         <table class="table table-dark">
             <thead>
                 <tr>
