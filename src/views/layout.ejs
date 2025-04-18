@@ -41,22 +41,22 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/getAddProduct">Add Product</a>
-                    </li>
-
-                   <% if(locals.email) { %>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-                    </li>
-                   <% }else { %>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
-                    </li>
-                   <% } %>
-
-                    
+                    </li>  
+                </ul>
+                <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+                    <% if(locals.email) { %>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                        </li>
+                       <% }else { %>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                        </li>
+                       <% } %>
+    
                 </ul>
             </div>
         </div>

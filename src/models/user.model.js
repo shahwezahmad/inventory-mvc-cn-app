@@ -1,5 +1,5 @@
 export default class UserModel {
-    static users = []
+    static users = [{id:1, email:'test@gmail.com', password:'test123'}]
     constructor(id, name, email, password) {
         this.id = id
         this.name = name
